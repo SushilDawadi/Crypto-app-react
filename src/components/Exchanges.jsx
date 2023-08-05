@@ -9,6 +9,7 @@ const Exchanges = () => {
   const [exchanges, setExchanges] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
   useEffect(() => {
     const fetchExchanges = async () => {
       try {
@@ -22,7 +23,7 @@ const Exchanges = () => {
       }
     };
     fetchExchanges();
-  }, []);
+  });
 
   if (error) return <Error message={"Error while fetching Exchanges"} />;
 
@@ -32,7 +33,7 @@ const Exchanges = () => {
         <Loader />
       ) : (
         <>
-          <HStack wrap={"wrap"}>
+          <HStack wrap={"wrap"} justifyContent={"center"}>
             {exchanges.map((item, index) => (
               <ExchangeCard
                 key={index}

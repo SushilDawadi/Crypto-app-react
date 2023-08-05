@@ -1,20 +1,39 @@
-import { Button, HStack } from "@chakra-ui/react";
+import { Button, HStack, Text } from "@chakra-ui/react";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <HStack p={4} boxShadow={"base"} background={"blackAlpha.900"}>
-      <Button variant={"unstyled"} color={"white"}>
-        <Link to={"/"}>Home</Link>
-      </Button>
-      <Button variant={"unstyled"} color={"white"}>
-        <Link to={"/coin"}>Coin</Link>
-      </Button>
-      <Button variant={"unstyled"} color={"white"}>
-        <Link to={"/exchange"}>Exchange</Link>
-      </Button>
-    </HStack>
+    <>
+      <Text
+        display={["none", "block"]}
+        fontSize={["xl", "3xl"]}
+        lineHeight={"10"}
+        textAlign={"center"}
+        color={"whiteAlpha.900"}
+        position={"absolute"}
+        left={"4"}
+        top={"5"}
+      >
+        The Crypto.
+      </Text>
+      <HStack
+        p={5}
+        boxShadow={"base"}
+        background={"blackAlpha.900"}
+        justifyContent={["center", "flex-end"]}
+      >
+        <Button variant={"unstyled"} color={"white"} px={3}>
+          <Link to={"/"}>Home</Link>
+        </Button>
+        <Button variant={"unstyled"} color={"white"} px={3}>
+          <Link to={"/coins"}>Coin</Link>
+        </Button>
+        <Button variant={"unstyled"} color={"white"} px={3}>
+          <Link to={"/exchange"}>Exchange</Link>
+        </Button>
+      </HStack>
+    </>
   );
 };
 
